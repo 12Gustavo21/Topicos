@@ -52,9 +52,9 @@ class Categorias extends CI_Controller
 
         $data = html_escape($data);
 
-        $id = $this->input->post()['catid'];
+        $id = $this->input->post()['cateid'];
 
-        if ($this->core_model->update('categorias', $data, 'catid', $id)) {
+        if ($this->core_model->update('categorias', $data, 'cateid', $id)) {
             $this->session->set_flashdata('success', 'Alteração realizada com sucesso!');
         } else {
             $this->session->set_flashdata('error', 'Erro ao alterar os dados!');

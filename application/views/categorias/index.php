@@ -71,14 +71,14 @@
                                     <div class="row">
                                         <div class="col-md-7">
                                             <div class="form-group">
-                                                <label for="catedescricao">Descrição: <span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" id="catedescricao" name="catedescricao" placeholder="Ex: Placas mãe" required>
+                                                <label for="catecodigo">Código: <span class='text-danger'>*</span></label>
+                                                <input type="text" class="form-control" id="catecodigo" name="catecodigo" placeholder="Ex: TI-001" required>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="catecodigo">Código: <span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" id="catecodigo" name="catecodigo" placeholder="Ex: TI-001" required>
+                                                <label for="catedescricao">Descrição: <span class='text-danger'>*</span></label>
+                                                <input type="text" class="form-control" id="catedescricao" name="catedescricao" placeholder="Ex: Placas mãe" required>
                                             </div>
                                         </div>
                                     </div>
@@ -180,23 +180,23 @@
                                                             <div class="row">
                                                                 <div class="col-md-7">
                                                                     <div class="form-group">
-                                                                        <label for="catedescricao">Descrição: <span class='text-danger'>*</span></label>
-                                                                        <input type="text" class="form-control" id="catedescricao" name="catedescricao" placeholder="Ex: Placas mãe" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-5">
-                                                                    <div class="form-group">
                                                                         <label for="catecodigo">Código: <span class='text-danger'>*</span></label>
                                                                         <input type="text" class="form-control" id="catecodigo" name="catecodigo" placeholder="Ex: TI-001" required>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group">
+                                                                        <label for="catedescricao">Descrição: <span class='text-danger'>*</span></label>
+                                                                        <input type="text" class="form-control" id="catedescricao" name="catedescricao" placeholder="Ex: Placas mãe" required>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <input type="hidden" class="form-control" id="cateid" name="cateid" placeholder="Ex: Gustavo Almeida" value="<?php echo $categoria->cateid; ?>" required>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                                                                <button type="submit" class="btn btn-success mr-2">Salvar</button>
+                                                            </div>
                                                         </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                                                        <button type="submit" class="btn btn-success mr-2">Salvar</button>
                                                     </div>
                                                 </div>
                                             </div>

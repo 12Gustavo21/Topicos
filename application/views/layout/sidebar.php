@@ -13,9 +13,13 @@
     <div class="sidebar-content">
         <div class="nav-container">
             <nav id="main-menu-navigation" class="navigation-main">
+
                 <div class="nav-lavel">Cadastros</div>
                 <div class="nav-item">
                     <a href="<?php echo base_url() . 'clientes' ?>"><i class="ik ik-users"></i><span>Clientes</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="<?php echo base_url() . 'categorias' ?>"><i class="ik ik-package"></i><span>Categorias</span></a>
                 </div>
                 <div class="nav-lavel">Navigation</div>
                 <div class="nav-item active">

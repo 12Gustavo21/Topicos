@@ -21,6 +21,9 @@
                 <div class="nav-item">
                     <a href="<?php echo base_url() . 'categorias' ?>"><i class="ik ik-package"></i><span>Categorias</span></a>
                 </div>
+                <div class="nav-item">
+                    <a href="<?php echo base_url() . 'localizacoes' ?>"><i class="ik ik-map-pin"></i><span>Localizações</span></a>
+                </div>
                 <div class="nav-lavel">Navigation</div>
                 <div class="nav-item active">
                     <a href="index.html"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>

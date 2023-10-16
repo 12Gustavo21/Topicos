@@ -26,10 +26,10 @@
                 <div class="row align-items-end">
                     <div class="col-lg-8">
                         <div class="page-header-title">
-                            <i class="ik ik-package bg-dark"></i>
+                            <i class="ik ik-map-pin bg-dark"></i>
                             <div class="d-inline">
-                                <h5>Categorias</h5>
-                                <span>Categorias cadastradas no sistema</span>
+                                <h5>Localizações</h5>
+                                <span>Localizações cadastradas no sistema</span>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="#">Cadastro</a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">Categorias</li>
+                                <li class="breadcrumb-item active" aria-current="page">Localizações</li>
                             </ol>
                         </nav>
                     </div>
@@ -51,16 +51,16 @@
             <!-- Fim do cabeçalho -->
             <div class="card">
                 <div class="card-header">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#inserirCategoria">
-                        + Nova categoria
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#inserirLocalizacoes">
+                        + Nova localização
                     </button>
                 </div>
                 <!-- Modal -->
-                <div class="modal fade" id="inserirCategoria" tabindex="-1" role="dialog" aria-labelledby="inserirCategoriaLabel" aria-hidden="true">
+                <div class="modal fade" id="inserirLocalizacoes" tabindex="-1" role="dialog" aria-labelledby="inserirLocalizacoesLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Nova categoria</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Nova localização</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -71,14 +71,14 @@
                                     <div class="row">
                                         <div class="col-md-7">
                                             <div class="form-group">
-                                                <label for="catecodigo">Código: <span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" id="catecodigo" name="catecodigo" placeholder="Ex: TI-001" required>
+                                                <label for="locacodigo">Código: <span class='text-danger'>*</span></label>
+                                                <input type="text" class="form-control" id="locacodigo" name="locacodigo" placeholder="Ex: AN-001" required>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="catedescricao">Descrição: <span class='text-danger'>*</span></label>
-                                                <input type="text" class="form-control" id="catedescricao" name="catedescricao" placeholder="Ex: Placas mãe" required>
+                                                <label for="locadescricao">Descrição: <span class='text-danger'>*</span></label>
+                                                <input type="text" class="form-control" id="locadescricao" name="locadescricao" placeholder="Ex: Rua Antonio Maia" required>
                                             </div>
                                         </div>
                                     </div>
@@ -103,57 +103,57 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (empty($categorias)) : ?>
+                            <?php if (empty($localizacoes)) : ?>
                                 <tr>
                                     <td colspan="4">
                                         <div class="alert alert-danger" role="alert">
-                                            Nenhuma categoria cadastrada!
+                                            Nenhuma localização cadastrada!
                                         </div>
                                     </td>
                                 </tr>
                             <?php else : ?>
-                                <?php foreach ($categorias as $categoria) : ?>
+                                <?php foreach ($localizacoes as $localizacao) : ?>
                                     <tr>
-                                        <td><?php echo $categoria->cateid; ?></td>
-                                        <td><?php echo $categoria->catecodigo; ?></td>
-                                        <td><?php echo $categoria->catedescricao; ?></td>
+                                        <td><?php echo $localizacao->locaid; ?></td>
+                                        <td><?php echo $localizacao->locacodigo; ?></td>
+                                        <td><?php echo $localizacao->locadescricao; ?></td>
                                         <td>
                                             <div class="table-actions">
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalviewCategoria<?php echo $categoria->cateid; ?>">
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalviewlocalizacao<?php echo $localizacao->locaid; ?>">
                                                     <i class="ik ik-eye"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editCategoria<?php echo $categoria->cateid; ?>">
+                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editlocalizacao<?php echo $localizacao->locaid; ?>">
                                                     <i class="ik ik-edit-2"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteCategoria<?php echo $categoria->cateid; ?>">
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeletelocalizacao<?php echo $localizacao->locaid; ?>">
                                                     <i class="ik ik-trash-2"></i>
                                                 </button>
                                             </div>
                                         </td>
                                     </tr>
-                                    <!-- Início do modal viewCategoria -->
-                                    <div class="modal fade" id="modalviewCategoria<?php echo $categoria->cateid; ?>" tabindex="-1" role="dialog" aria-labelledby="modalviewCategoriaLabel" aria-hidden="true">
+                                    <!-- Início do modal viewlocalizacao -->
+                                    <div class="modal fade" id="modalviewlocalizacao<?php echo $localizacao->locaid; ?>" tabindex="-1" role="dialog" aria-labelledby="modalviewlocalizacaoLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Categoria: <?php echo $categoria->catedescricao; ?></h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">localizacao: <?php echo $localizacao->locadescricao; ?></h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form class="forms-sample" id="viewCategoria" name="viewCategoria">
+                                                    <form class="forms-sample" id="viewlocalizacao" name="viewlocalizacao">
                                                         <div class="row">
                                                             <div class="col-md-7">
                                                                 <div class="form-group">
-                                                                    <label for="catecodigo">Código:</label>
-                                                                    <input type="text" class="form-control" id="catecodigo" name="catecodigo" value="<?php echo $categoria->catecodigo; ?>" readonly>
+                                                                    <label for="locacodigo">Código:</label>
+                                                                    <input type="text" class="form-control" id="locacodigo" name="locacodigo" value="<?php echo $localizacao->locacodigo; ?>" readonly>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-5">
                                                                 <div class="form-group">
-                                                                    <label for="catedescricao">Descrição:</label>
-                                                                    <input type="text" class="form-control" id="catedescricao" name="catedescricao" value="<?php echo $categoria->catedescricao; ?>" readonly>
+                                                                    <label for="locadescricao">Descrição:</label>
+                                                                    <input type="text" class="form-control" id="locadescricao" name="locadescricao" value="<?php echo $localizacao->locadescricao; ?>" readonly>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -162,36 +162,36 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Fim do modal viewCategoria -->
+                                    <!-- Fim do modal viewlocalizacao -->
 
-                                    <!-- Início do modal editCategoria -->
-                                    <div class="modal fade" id="editCategoria<?php echo $categoria->cateid; ?>" tabindex="-1" role="dialog" aria-labelledby="editCategoriaLabel" aria-hidden="true">
+                                    <!-- Início do modal editlocalizacao -->
+                                    <div class="modal fade" id="editlocalizacao<?php echo $localizacao->locaid; ?>" tabindex="-1" role="dialog" aria-labelledby="editlocalizacaoLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Alterar categoria: <?php echo $categoria->catedescricao; ?></h5>
+                                                        <h5 class="modal-title" id="exampleModalLabel">Alterar localizacao: <?php echo $localizacao->locadescricao; ?></h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="forms-sample" id="editCategoria" name="editCategoria" action="<?php echo base_url($this->router->fetch_class() . '/edit/'); ?>" method="POST">
-                                                            <div class="row">
+                                                        <form class="forms-sample" id="editlocalizacao" name="editlocalizacao" action="<?php echo base_url($this->router->fetch_class() . '/edit/'); ?>" method="POST">
+                                                            <div class="row">   
                                                                 <div class="col-md-7">
                                                                     <div class="form-group">
-                                                                        <label for="catecodigo">Código: <span class='text-danger'>*</span></label>
-                                                                        <input type="text" class="form-control" id="catecodigo" name="catecodigo" placeholder="Ex: TI-001" value="<?php echo $categoria->catecodigo; ?>" required>
+                                                                        <label for="locacodigo">Código: <span class='text-danger'>*</span></label>
+                                                                        <input type="text" class="form-control" id="locacodigo" name="locacodigo" placeholder="Ex: AN-001" value="<?php echo $localizacao->locacodigo; ?>" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5">
                                                                     <div class="form-group">
-                                                                        <label for="catedescricao">Descrição: <span class='text-danger'>*</span></label>
-                                                                        <input type="text" class="form-control" id="catedescricao" name="catedescricao" placeholder="Ex: Placas mãe" value="<?php echo $categoria->catedescricao; ?>" required>
+                                                                        <label for="locadescricao">Descrição: <span class='text-danger'>*</span></label>
+                                                                        <input type="text" class="form-control" id="locadescricao" name="locadescricao" placeholder="Ex: Rua Antonio Maia" value="<?php echo $localizacao->locadescricao; ?>" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <input type="hidden" class="form-control" id="cateid" name="cateid" value="<?php echo $categoria->cateid; ?>" required>
+                                                            <input type="hidden" class="form-control" id="locaid" name="locaid" value="<?php echo $localizacao->locaid; ?>" required>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                                                                 <button type="submit" class="btn btn-success mr-2">Salvar</button>
@@ -202,22 +202,22 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Fim do modal editCategoria -->
+                                    <!-- Fim do modal editlocalizacao -->
 
-                                    <!-- Início do modal deleteCategoria -->
-                                    <div class="modal fade" id="modalDeleteCategoria<?php echo $categoria->cateid; ?>" tabindex="-1" role="dialog" aria-labelledby="modalDeleteCategoriaLabel" aria-hidden="true">
+                                    <!-- Início do modal deletelocalizacao -->
+                                    <div class="modal fade" id="modalDeletelocalizacao<?php echo $localizacao->locaid; ?>" tabindex="-1" role="dialog" aria-labelledby="modalDeletelocalizacaoLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Deseja excluir a categoria: <?php echo $categoria->catedescricao; ?> ?</h5>
+                                                        <h5 class="modal-title" id="exampleModalLabel">Deseja excluir a localizacao: <?php echo $localizacao->locadescricao; ?> ?</h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="forms-sample" id="deleteCategoria" name="deleteCategoria" action="<?php echo base_url($this->router->fetch_class() . '/delete/'); ?>" method="POST">
-                                                            <input type="hidden" class="form-control" id="cateid" name="cateid" value="<?php echo $categoria->cateid; ?>" required>
+                                                        <form class="forms-sample" id="deletelocalizacao" name="deletelocalizacao" action="<?php echo base_url($this->router->fetch_class() . '/delete/'); ?>" method="POST">
+                                                            <input type="hidden" class="form-control" id="locaid" name="locaid" value="<?php echo $localizacao->locaid; ?>" required>
                                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
                                                             <button type="submit" class="btn btn-success">Sim</button>
                                                         </form>
@@ -226,7 +226,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Fim do modal deleteCategoria -->
+                                    <!-- Fim do modal deletelocalizacao -->
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </tbody>

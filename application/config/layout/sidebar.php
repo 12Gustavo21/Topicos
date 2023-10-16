@@ -2,20 +2,20 @@
                     <div class="sidebar-header">
                         <a class="header-brand" href="index.html">
                             <div class="logo-img">
-                               <img src="<?php echo base_url()?>public/src/img/brand-white.svg" class="header-brand-img" alt="lavalite"> 
+                                <img src="<?php echo base_url() ?>public/src/img/brand-white.svg" class="header-brand-img" alt="lavalite">
                             </div>
                             <span class="text">ThemeKit</span>
                         </a>
                         <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
                         <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
                     </div>
-                    
+
                     <div class="sidebar-content">
                         <div class="nav-container">
                             <nav id="main-menu-navigation" class="navigation-main">
                                 <div class="nav-lavel">Cadastros</div>
                                 <div class="nav-item">
-                                    <a href="<?php echo base_url().'clientes'?>"><i class="ik ik-users"></i><span>Clientes</span></a>
+                                    <a href="<?php echo base_url() . 'clientes' ?>"><i class="ik ik-users"></i><span>Clientes</span></a>
                                 </div>
                                 <div class="nav-lavel">Navigation</div>
                                 <div class="nav-item active">

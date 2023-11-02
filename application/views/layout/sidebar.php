@@ -27,6 +27,9 @@
                 <div class="nav-item">
                     <a href="<?php echo base_url() . 'cargos' ?>"><i class="ik ik-layers"></i><span>Cargos</span></a>
                 </div>
+                <div class="nav-item">
+                    <a href="<?php echo base_url() . 'transportadora' ?>"><i class="ik ik-truck"></i><span>Transportadora</span></a>
+                </div>
                 <div class="nav-lavel">Navigation</div>
                 <div class="nav-item active">
                     <a href="index.html"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>

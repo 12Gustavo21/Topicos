@@ -5,6 +5,11 @@ class Home extends CI_Controller
 {
 	public function index()
 	{
-		$this->load->view('home/index');
+		$user = $this->ion_auth->user()->row();
+		if ($user) {
+			$this->load->view('home/index');
+		} else {
+			redirect('/');
+		}
 	}
-}	
+}

@@ -26,4 +26,10 @@ class Login extends CI_Controller
       redirect('/');
     }
   }
+
+  public function logout()
+  {
+    $this->ion_auth->logout();
+    redirect('/');
+  }
 }

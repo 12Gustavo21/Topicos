@@ -13,7 +13,6 @@
     <div class="sidebar-content">
         <div class="nav-container">
             <nav id="main-menu-navigation" class="navigation-main">
-
                 <div class="nav-lavel">Cadastros</div>
                 <div class="nav-item">
                     <a href="<?php echo base_url() . 'clientes' ?>"><i class="ik ik-users"></i><span>Clientes</span></a>
@@ -29,6 +28,10 @@
                 </div>
                 <div class="nav-item">
                     <a href="<?php echo base_url() . 'transportadora' ?>"><i class="ik ik-truck"></i><span>Transportadora</span></a>
+                </div>
+                <div class="nav-lavel">Permissões</div>
+                <div class="nav-item">
+                    <a href="<?php echo base_url() . 'grupos' ?>"><i class="ik ik-user-check"></i><span>Grupos de usuários</span></a>
                 </div>
                 <div class="nav-lavel">Navigation</div>
                 <div class="nav-item active">

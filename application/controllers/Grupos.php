@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Cargos extends CI_Controller
+class Grupos extends CI_Controller
 {
   public function index()
   {
     $data = array(
-      'cargos' => $this->core_model->get_all('cargos'),
+      'groups' => $this->core_model->get_all('groups'),
     );
 
-    $this->load->view('cargos/index', $data);
+    $this->load->view('grupos/index', $data);
   }
 
   public function insert()
@@ -20,15 +20,15 @@ class Cargos extends CI_Controller
 
     $data = elements(
       array(
-        'cargcodigo',
-        'cargdescricao'
+        'name',
+        'description'
       ),
       $this->input->post()
     );
 
     $data = html_escape($data);
 
-    if ($this->core_model->insert('cargos', $data)) {
+    if ($this->core_model->insert('groups', $data)) {
       $this->session->set_flashdata('success', 'Dados salvos com sucesso!');
     } else {
       $this->session->set_flashdata('error', 'Erro ao salvar os dados!');
@@ -44,17 +44,17 @@ class Cargos extends CI_Controller
     }
     $data = elements(
       array(
-        'cargcodigo',
-        'cargdescricao'
+        'name',
+        'description'
       ),
       $this->input->post()
     );
 
     $data = html_escape($data);
 
-    $id = $this->input->post()['cargid'];
+    $id = $this->input->post()['id'];
 
-    if ($this->core_model->update('cargos', $data, 'cargid', $id)) {
+    if ($this->core_model->update('groups', $data, 'id', $id)) {
       $this->session->set_flashdata('success', 'Alteração realizada com sucesso!');
     } else {
       $this->session->set_flashdata('error', 'Erro ao alterar os dados!');
@@ -73,9 +73,9 @@ class Cargos extends CI_Controller
       redirect('/');
     }
 
-    $id = $this->input->post()['cargid'];
+    $id = $this->input->post()['id'];
 
-    if ($this->core_model->delete('cargos', 'cargid', $id)) {
+    if ($this->core_model->delete('groups', 'id', $id)) {
       $this->session->set_flashdata('success', 'Exclusão realizada com sucesso!');
     } else {
       $this->session->set_flashdata('error', 'Erro ao excluir os dados!');

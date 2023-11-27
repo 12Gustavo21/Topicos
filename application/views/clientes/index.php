@@ -28,8 +28,8 @@
                         <div class="page-header-title">
                             <i class="ik ik-user-check bg-dark"></i>
                             <div class="d-inline">
-                                <h5>Grupos</h5>
-                                <span>Grupos cadastrados no sistema</span>
+                                <h5>Clientes</h5>
+                                <span>Clientes cadastrados no sistema</span>
                             </div>
                         </div>
                     </div>

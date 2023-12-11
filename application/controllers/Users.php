@@ -32,22 +32,23 @@ class Users extends CI_Controller
       redirect('/');
     }
 
-    $data = elements(
-      array(
-        'clieCPF', 'clieNome', 'clieDatadenascimento', 'clieEndereco',
-        'clieNumero', 'clieBairro', 'clieCEP', 'clieCidade', 'clieEstado',
-        'clieReferencia'
-      ),
-      $this->input->post()
+    $identity = $this->input->post()['email'];
+    $password = $this->input->post()['password'];
+    $email = $this->input->post()['email'];
+    $additional_data = array(
+      'first_name' => $this->input->post()['first_name'],
+      'last_name' => $this->input->post()['last_name'],
+      'username' => $this->input->post()['username']
     );
+    $group = array('2'); // Sets user to admin.
 
-    $data = html_escape($data);
-
-    if ($this->core_model->insert('users', $data)) {
+    if ($this->ion_auth->register($username, $password, $email, $additional_data, $group)) {
       $this->session->set_flashdata('sucesso', 'Registro inserido com sucesso.');
     } else {
       $this->session->set_flashdata('error', 'Não foi possível inserir o registro.');
     }
+
+    // $data = elements(
     redirect('/' . $this->router->fetch_class());
     // echo '<pre>';
     // print_r($this->input->post());
@@ -86,9 +87,9 @@ class Users extends CI_Controller
     if (!$this->input->post()) {
       redirect('/');
     }
-    $id = $this->input->post()['clieId'];
+    $id = $this->input->post()['id'];
 
-    if ($this->core_model->delete('users', 'clieId', $id)) {
+    if ($this->core_model->delete('users', 'id', $id)) {
       $this->session->set_flashdata('sucesso', 'Registro deletado com sucesso.');
     } else {
       $this->session->set_flashdata('error', 'Não foi possível deletar o registro.');

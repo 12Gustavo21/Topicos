@@ -145,10 +145,6 @@
                               <label for="email">Email</label>
                               <input type="email" class="form-control" id="email" name="email" value="<?php echo $user->email; ?>" readonly>
                             </div>
-                            <div class="form-group">
-                              <label for="password">Senha</label>
-                              <input type="password" class="form-control" id="password" name="password" value="<?php echo $user->password; ?>" readonly>
-                            </div>
 
                             <!-- <button type="submit" class="btn btn-success mr-2">Salvar</button> -->
 
